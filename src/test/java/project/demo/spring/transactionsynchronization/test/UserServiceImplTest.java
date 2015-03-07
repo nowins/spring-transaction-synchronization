@@ -1,4 +1,4 @@
-package project.dempo.spring.transactionsynchronization.test;
+package project.demo.spring.transactionsynchronization.test;
 
 import org.junit.BeforeClass;
 import org.junit.Test;
