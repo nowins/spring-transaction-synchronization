@@ -7,7 +7,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-
 import project.demo.spring.transactionsynchronization.AfterCommitExecutor;
 
 @Aspect
@@ -22,7 +21,8 @@ public class AfterCommitAnnotationAspect {
         this.afterCommitExecutor = afterCommitExecutor;
     }
  
-    @Around(value = "@annotation(project.demo.spring.transactionsynchronization.annotation.AfterCommit)", argNames = "pjp")
+    @Around(value = "@within(project.demo.spring.transactionsynchronization.annotation.AfterCommit) || " +
+            "@annotation(project.demo.spring.transactionsynchronization.annotation.AfterCommit)", argNames = "pjp")
     public Object aroundAdvice(final ProceedingJoinPoint pjp) {
         afterCommitExecutor.execute(new PjpAfterCommitRunnable(pjp));
         return null;
