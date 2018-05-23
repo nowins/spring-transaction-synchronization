@@ -8,7 +8,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import project.demo.spring.transactionsynchronization.SpringConfiguration;
-import project.demo.spring.transactionsynchronization.service.UserService;
+import project.demo.spring.transactionsynchronization.test.service.UserService;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = SpringConfiguration.class)
